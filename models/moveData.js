@@ -25,10 +25,6 @@ const moveDataSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    history: {
-        type: Array,
-        required: true
-    },
     next: {
         type: String,
         required: true

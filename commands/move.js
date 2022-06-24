@@ -19,7 +19,7 @@ module.exports = {
 		let moves;
 		const channelMoveData = await moveData.find({ channel: interaction.channelId });
 		for(let i in channelMoveData){
-			if(channelMoveData[i]?.user == interaction.user.id){
+			if(channelMoveData[i]?.next == interaction.user.id){
 				moves = channelMoveData[i];
 			}
 		}
@@ -27,19 +27,21 @@ module.exports = {
 		let game;
 		const channelGameData = await gameData.find({ channel: interaction.channelId });
 		for(let i in channelGameData){
-			if(channelGameData[i]?.players[0] == interaction.user.id){
+			console.log(channelGameData[i])
+			if(channelGameData[i]?.players.includes(interaction.user.id)){
 				game = channelGameData[i];
 			}
 		}
 
 		if(moves == null){
-			moves = { move: '', turn: 0, history: [] };
+			moves = { move: '', turn: 0 };
 		}
 
-		const history = Array.from(moves.history);
-		history.push(move);
 
 		const turn = moves.turn + 1;
+
+		console.log(game)
+		console.log(game.players)
 
 		let next;
 		if(game.players.length == game.players.indexOf(interaction.user.id) + 1){
@@ -57,7 +59,6 @@ module.exports = {
             user: interaction.user.id,
             move: move,
 			turn: turn,
-			history: history,
 			next: next
         });
         moveDataUpload.save();

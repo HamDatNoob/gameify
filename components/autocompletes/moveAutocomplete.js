@@ -24,7 +24,7 @@ module.exports = {
         move = move?.next;
 
         if(move == null || move == undefined){
-			move = game.players[0];
+			move = game?.players[0];
 		}
 
         if(move == interaction.user.id){
