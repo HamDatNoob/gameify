@@ -79,9 +79,11 @@ module.exports = {
 			if(dupeCount.includes(players[i])){ // invalidates game if playing agaisnt duplicate players
 				return interaction.reply({ content: `**An error occurred:** Player ${parseInt(i) + 1}, <@${players[i].id}>, is a duplicate player!`, ephemeral: true });
 			}
-
-			if(channelData.map(v => v.players[i]).includes(players[i].id)){ // invalidates game if a player is already in another game in current channel
-				return interaction.reply({ content: `**An error occurred:** Player ${parseInt(i) + 1}, <@${players[i].id}>, is already in a game in this channel!`, ephemeral: true });
+			
+			for(let ii in channelData.map(v => v.players)){
+				if(channelData.map(v => v.players[ii]).includes(players[i].id)){ // invalidates game if a player is already in another game in current channel
+					return interaction.reply({ content: `**An error occurred:** Player ${parseInt(i) + 1}, <@${players[i].id}>, is already in a game in this channel!`, ephemeral: true });
+				}
 			}
 		}
 

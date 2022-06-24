@@ -1,6 +1,5 @@
-const positionData = require("../../../models/postitionData");
+const positionData = require("../../../models/postitionData.js");
 const allMoves = require('../../../json/gameMoves.json');
-
 
 async function validMoves(gameId){
     let positions = await positionData.findOne({ gameId: gameId });
