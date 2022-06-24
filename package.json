@@ -1,0 +1,27 @@
+{
+  "name": "gameify",
+  "version": "1.0.0",
+  "description": "bot to play games in discord with friends",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HamDatNoob/gameify.git"
+  },
+  "author": "hamdatnoob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HamDatNoob/gameify/issues"
+  },
+  "homepage": "https://github.com/HamDatNoob/gameify#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.15.0",
+    "@discordjs/rest": "^0.5.0",
+    "discord-api-types": "^0.34.0",
+    "discord.js": "^13.8.0",
+    "jimp": "^0.16.1",
+    "mongoose": "^6.4.0"
+  }
+}
