@@ -11,7 +11,7 @@ module.exports = {
     async execute(interaction, players, gameId){
         const startEmbed = new MessageEmbed()
         .setTitle('Tic Tac Toe')
-        .setDescription(`<@${players[0].id}> vs <@${players[1].id}>\n\nUse the /move command to make a move!\n\nIt is ${players[0]}'s Turn!`)
+        .setDescription(`<@${players[0].id}> vs <@${players[1].id}>\n\nUse the /move command to make a move!\nExample: "/move 5" to mark square 5!\n\nIt is ${players[0]}'s Turn!`)
         .setColor('#4cb99D')
         .setImage('https://cdn.discordapp.com/attachments/872600292586303490/988689459065266206/board.png?size=4096')
         .setFooter({ text: `Game ID: ${gameId}` })

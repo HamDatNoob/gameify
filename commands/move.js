@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { randomID } = require('../scripts/random.js');
 const moveData = require("../models/moveData.js");
 const gameData = require("../models/gameData.js");
-const gameMoves = require('../json/gameMoves.json');
+const gameMoves = require('../json/gameInfo.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -30,6 +30,10 @@ module.exports = {
 			if(channelGameData[i]?.players.includes(interaction.user.id)){
 				game = channelGameData[i];
 			}
+		}
+
+		if(game == undefined){
+			return interaction.reply({ content: "**An error occurred:** You are not in a game!", ephemeral: true });
 		}
 
 		const { validMoves } = require(`../scripts/gameSpecific/${gameMoves[game.type].name}/validMoves.js`);

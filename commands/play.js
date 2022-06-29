@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const fs = require('fs')
-const gameRules = require('../json/gameRules.json');
+const gameRules = require('../json/gameInfo.json');
 const { randomID } = require('../scripts/random.js');
 const gameData = require("../models/gameData.js");
 
@@ -14,7 +14,7 @@ module.exports = {
 		.setRequired(true)
 		.addChoices(
 			{ name: 'Tic Tac Toe (2 Players)', value: 0 },
-			{ name: 'Uno (2-8 Players)', value: 1 },
+			{ name: 'Connect 4 (2 Players)', value: 1 },
 			{ name: 'Checkers (2 Players)', value: 2 }
 		)
 	)

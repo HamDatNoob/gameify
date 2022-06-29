@@ -5,22 +5,14 @@ function random(floor, ceiling){
 }
 
 function randomID(limit){
-    let floor = 1;
+    let floor = 1 + "0".repeat(limit - 1);
     let ceiling = "9".repeat(limit);
-    let output = Math.floor(Math.random() * (ceiling - floor + 1) + floor);  
-    
-    let o = output.toString();
 
-    let ID;
-    if(o.length < limit){
-        ID = "0".repeat(o.length) - 1 + o; 
-    }else{
-        ID = o;
-    }
+    let o = random(floor, ceiling);
+
+    if(o < 0) o /= -1;
     
-    if(ID < 0) ID /= -1;
-    
-    return `${ID}`;
+    return `${o}`;
 }
 
 module.exports = { random, randomID };
