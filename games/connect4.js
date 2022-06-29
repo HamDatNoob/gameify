@@ -13,7 +13,7 @@ module.exports = {
         .setTitle('Connect 4')
         .setDescription(`<@${players[0].id}> vs <@${players[1].id}>\n\nUse the /move command to make a move!\nExample: "/move 5" to mark colomn 5!\n\nIt is ${players[0]}'s Turn!`)
         .setColor('#4cb99D')
-        .setImage('https://cdn.discordapp.com/attachments/872600292586303490/991546189889683577/board.png?size=4096')
+        .setImage('https://cdn.discordapp.com/attachments/872600292586303490/991605882599256098/board.png?size=4096')
         .setFooter({ text: `Game ID: ${gameId}` })
         .setTimestamp();
 
