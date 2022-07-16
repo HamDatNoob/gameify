@@ -41,7 +41,8 @@
                 "name": "9",
                 "value": 9
             }
-        ]
+        ],
+        "extra": false
     },
     {
         "name": "connect4",
@@ -77,13 +78,15 @@
                 "name": "7",
                 "value": 7
             }
-        ]
+        ],
+        "extra": false 
     },
     {
         "name": "uno",
         "displayName": "Uno",
         "maxPlayers": 8,
-        "minPlayers": 2
+        "minPlayers": 2,
+        "extra": true 
     },
     {
         "name": "checkers",

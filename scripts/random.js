@@ -15,4 +15,15 @@ function randomID(limit){
     return `${o}`;
 }
 
-module.exports = { random, randomID };
+function shuffle(deck){
+    for(let i = deck.length - 1; i > 0; i--){
+        let j = Math.floor(Math.random() * i);
+        let temp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = temp;
+    }
+    
+    return deck;
+}
+
+module.exports = { random, randomID, shuffle };

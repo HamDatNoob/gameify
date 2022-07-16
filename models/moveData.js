@@ -28,6 +28,10 @@ const moveDataSchema = new mongoose.Schema({
     next: {
         type: String,
         required: true
+    },
+    extra: {
+        type: Number,
+        required: false
     }
 });
 

@@ -2,7 +2,8 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { randomID } = require('../scripts/random.js');
 const moveData = require("../models/moveData.js");
 const gameData = require("../models/gameData.js");
-const gameMoves = require('../json/gameInfo.json');
+const gameInfo = require('../json/gameInfo.json');
+const { sleep } = require('../scripts/sleep.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -36,9 +37,9 @@ module.exports = {
 			return interaction.reply({ content: "**An error occurred:** You are not in a game!", ephemeral: true });
 		}
 
-		const { validMoves } = require(`../scripts/gameSpecific/${gameMoves[game.type].name}/validMoves.js`);
+		const { validMoves } = require(`../scripts/gameSpecific/${gameInfo[game.type].name}/validMoves.js`);
 
-		const m = await validMoves(game._id);
+		const m = await validMoves(game._id, interaction.user.id);
 		if(m.map(v => v.name).includes(move) == false){
 			return interaction.reply({ content: `**An error occurred:** "${move}" is not a valid move!`, ephemeral: true });
 		}
@@ -73,8 +74,10 @@ module.exports = {
 			turn: turn,
 			next: next
         });
-        moveDataUpload.save();
+        await moveDataUpload.save();
 
-		return interaction.reply({ content: 'Move sent! (click the "Dismiss message" button below to remove this message)', ephemeral: true });
+		await interaction.reply({ content: 'Move sent and recieved.' });
+		await sleep(1.5);
+		return interaction.deleteReply(1);
 	}
 }

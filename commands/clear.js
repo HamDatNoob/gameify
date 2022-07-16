@@ -14,6 +14,6 @@ module.exports = {
         await moveData.deleteMany({ channel: channel }).then(function(){});
         await positionData.deleteMany({ channel: channel }).then(function(){});
 
-        interaction.reply({ content: 'Cleared databases for the current channel!', ephemeral: true });
+        return interaction.reply({ content: 'Cleared databases for the current channel!', ephemeral: true });
     }
 }

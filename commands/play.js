@@ -15,7 +15,7 @@ module.exports = {
 		.addChoices(
 			{ name: 'Tic Tac Toe (2 Players)', value: 0 },
 			{ name: 'Connect 4 (2 Players)', value: 1 },
-			{ name: 'Checkers (2 Players)', value: 2 }
+			{ name: 'Uno (2-8 Players)', value: 2 }
 		)
 	)
 	.addUserOption(p2 => p2
@@ -110,7 +110,7 @@ module.exports = {
 			if(game.name != gameRules[g].name) continue;
 			
 			try{
-				game.execute(interaction, players, gameId);
+				return game.execute(interaction, players, gameId);
 			}catch(error){
 				await gameData.findByIdAndDelete(gameId); // removes all players from the game when an error occurs
 
