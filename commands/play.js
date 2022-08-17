@@ -75,10 +75,10 @@ module.exports = {
 				return interaction.reply({ content: `**An error occurred:** Player ${parseInt(i) + 1}, <@${players[i].id}>, is a bot!`, ephemeral: true });
 			}
 
-			let dupeCount = players.slice(0, i) + players.slice(i + 1)
-			if(dupeCount.includes(players[i])){ // invalidates game if playing agaisnt duplicate players
-				return interaction.reply({ content: `**An error occurred:** Player ${parseInt(i) + 1}, <@${players[i].id}>, is a duplicate player!`, ephemeral: true });
-			}
+			// let dupeCount = players.slice(0, i) + players.slice(i + 1)
+			// if(dupeCount.includes(players[i])){ // invalidates game if playing agaisnt duplicate players
+			// 	return interaction.reply({ content: `**An error occurred:** Player ${parseInt(i) + 1}, <@${players[i].id}>, is a duplicate player!`, ephemeral: true });
+			// }
 			
 			for(let ii in channelData.map(v => v.players)){
 				if(channelData.map(v => v.players[ii]).includes(players[i].id)){ // invalidates game if a player is already in another game in current channel
@@ -115,7 +115,7 @@ module.exports = {
 				await gameData.findByIdAndDelete(gameId); // removes all players from the game when an error occurs
 
 				console.error(error);
-				return interaction.followUp({ content: '**An error occurred:** An unknown internal error occurred whilst playing this game, game terminated. No losses were given!', ephemeral: true });
+				return interaction.followUp({ content: '**An error occurred:** An unknown internal error occurred whilst playing this game; the game has been terminated. No losses were given!', ephemeral: true });
 			}
 		}
 	}

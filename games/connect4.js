@@ -143,7 +143,7 @@ module.exports = {
 						if(ii > 2){ // skips this check after this point
 							if((pos[i][ii] + pos[i+1][ii-1] + pos[i+2][ii-2] + pos[i+3][ii-3]).match(winCon)){
 								data[1 + turnBin].flip(true, false);
-								data[0].composite(data[1 + turnBin], i * 68 + 28, (ii * 68 + 28) - 204);
+								data[0].composite(data[1 + turnBin], i * 68 + 28, (ii * 68 + 28) + 204);
 
 								newEmbed = new MessageEmbed(startEmbed)
 								.setImage(`attachment://${gameId}.png`)

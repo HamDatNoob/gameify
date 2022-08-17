@@ -287,11 +287,11 @@
             "color": "red"
         },
         {
-            "value": "d2",
+            "value": "dt",
             "color": "red"
         },
         {
-            "value": "d2",
+            "value": "dt",
             "color": "red"
         },
         {
@@ -387,11 +387,11 @@
             "color": "yellow"
         },
         {
-            "value": "d2",
+            "value": "dt",
             "color": "yellow"
         },
         {
-            "value": "d2",
+            "value": "dt",
             "color": "yellow"
         },
         {
@@ -487,11 +487,11 @@
             "color": "green"
         },
         {
-            "value": "d2",
+            "value": "dt",
             "color": "green"
         },
         {
-            "value": "d2",
+            "value": "dt",
             "color": "green"
         },
         {
@@ -587,11 +587,11 @@
             "color": "blue"
         },
         {
-            "value": "d2",
+            "value": "dt",
             "color": "blue"
         },
         {
-            "value": "d2",
+            "value": "dt",
             "color": "blue"
         },
         {
@@ -627,19 +627,19 @@
             "color": "action"
         },
         {
-            "value": "d4",
+            "value": "df",
             "color": "action"
         },
         {
-            "value": "d4",
+            "value": "df",
             "color": "action"
         },
         {
-            "value": "d4",
+            "value": "df",
             "color": "action"
         },
         {
-            "value": "d4",
+            "value": "df",
             "color": "action"
         }
     ]
