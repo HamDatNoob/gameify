@@ -12,7 +12,7 @@ module.exports = {
                 await command.execute(interaction);
             }catch(error){
                 console.error(error);
-                return interaction.reply({ content: '**An error occurred:** An unknown internal error occurred whilst completing this action!', ephemeral: true });
+                return interaction.followUp({ content: '**An error occurred:** An unknown internal error occurred whilst completing this action!', ephemeral: true });
             }
         }else if(interaction.isSelectMenu()){ //select menus
             const selectMenuFiles = fs.readdirSync('./components/selectMenus').filter(file => file.endsWith('.js'));
@@ -25,7 +25,7 @@ module.exports = {
                     await component.execute(interaction);
                 }catch(error){
                     console.error(error);
-                    return interaction.reply({ content: '**An error occurred:** An unknown internal error occurred whilst completing this action!', ephemeral: true });
+                    return interaction.followUp({ content: '**An error occurred:** An unknown internal error occurred whilst completing this action!', ephemeral: true });
                 }
             }
         }else if(interaction.isButton()){ //buttons
@@ -39,7 +39,7 @@ module.exports = {
                     await component.execute(interaction);
                 }catch(error){
                     console.error(error);
-                    return interaction.reply({ content: '**An error occurred:** An unknown internal error occurred whilst completing this action!', ephemeral: true });
+                    return interaction.followUp({ content: '**An error occurred:** An unknown internal error occurred whilst completing this action!', ephemeral: true });
                 }
             }
         }else if(interaction.isAutocomplete()){ //autocompletes

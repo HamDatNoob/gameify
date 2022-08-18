@@ -42,7 +42,7 @@
                 "value": 9
             }
         ],
-        "extra": false
+        "hands": false
     },
     {
         "name": "connect4",
@@ -79,19 +79,20 @@
                 "value": 7
             }
         ],
-        "extra": false 
+        "hands": false 
     },
     {
         "name": "uno",
         "displayName": "Uno",
         "maxPlayers": 8,
         "minPlayers": 2,
-        "extra": true 
+        "hands": true 
     },
     {
         "name": "checkers",
         "displayName": "Checkers",
         "maxPlayers": 2,
-        "minPlayers": 2
+        "minPlayers": 2,
+        "hands": false
     }
 ]
