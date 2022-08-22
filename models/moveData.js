@@ -30,7 +30,7 @@ const moveDataSchema = new mongoose.Schema({
         required: true
     },
     extra: {
-        type: Number,
+        type: Object,
         required: false
     }
 });

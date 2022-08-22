@@ -33,13 +33,11 @@ module.exports = {
 			}
 		}
 
-		if(game == undefined){
-			return interaction.reply({ content: "**An error occurred:** You are not in a game!", ephemeral: true });
-		}
-
+		if(game == undefined) return interaction.reply({ content: "**An error occurred:** You are not in a game!", ephemeral: true });
+		
 		const { validMoves } = require(`../scripts/gameSpecific/${gameInfo[game.type].name}/validMoves.js`);
 
-		const m = await validMoves(game._id, interaction.user.id);
+		const m = await validMoves(game._id, interaction.user.id, move, interaction);
 		if(m.map(v => v.name).includes(move) == false){
 			return interaction.reply({ content: `**An error occurred:** "${move}" is not a valid move!`, ephemeral: true });
 		}
@@ -76,8 +74,15 @@ module.exports = {
         });
         await moveDataUpload.save();
 
-		await interaction.reply({ content: 'Move sent and recieved.' });
-		await sleep(1.5);
-		return interaction.deleteReply(1);
+		if(!interaction.replied){
+			await interaction.reply({ content: 'Move sent and recieved.' });
+			await sleep(1.5);
+			return interaction.deleteReply();
+		}else{
+			await interaction.followUp({ content: 'Move sent and recieved.' }).then(async reply => {
+				await sleep(1.5);
+				return reply.delete();
+			});
+		}
 	}
 }

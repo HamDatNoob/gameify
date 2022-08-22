@@ -1,6 +1,6 @@
 {
   "name": "gameify",
-  "version": "1.0.0",
+  "version": "0.2.1",
   "description": "bot to play games in discord with friends",
   "main": "main.js",
   "scripts": {
@@ -19,9 +19,11 @@
   "dependencies": {
     "@discordjs/builders": "^0.15.0",
     "@discordjs/rest": "^0.5.0",
+    "better-sqlite3": "^7.6.2",
     "discord-api-types": "^0.34.0",
     "discord.js": "^13.8.0",
     "jimp": "^0.16.1",
-    "mongoose": "^6.4.0"
+    "mongoose": "^6.4.0",
+    "quick.db": "^9.0.6"
   }
 }
